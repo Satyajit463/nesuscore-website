@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>NexusCore Digital | Premium Digital Agency & Elite Web Solutions</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NexusCore Digital delivers elite web development, UI/UX design, SEO, and digital marketing services. Transform your business with innovative, high-end solutions.">
+  <meta name="keywords" content="premium web development, digital agency, luxury UI/UX design, SEO, mobile apps, consulting">
+  <meta name="author" content="NexusCore Digital">
+  
+  <!-- Updated reliable CDNs -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800|Lato:300,400,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
+  
+  <style>
+  :root {
+    --premium-dark: #0A0E1A;
+    --premium-navy: #111827;
+    --premium-gold: #D4AF37;
+    --premium-gold-light: #E5C158;
+    --premium-gold-dark: #B4942E;
+    --premium-white: #FFFFFF;
+    --premium-gray: #E5E7EB;
+    --premium-muted: #9CA3AF;
+    --premium-accent: #3B82F6;
+    --premium-glow: rgba(212, 175, 55, 0.2);
+  }
+  
+  body {
+    font: 400 16px 'Lato', sans-serif;
+    line-height: 1.7;
+    color: #F3F4F6;
+    background: var(--premium-dark);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, .navbar, .panel-heading, .btn, .jumbotron h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  
+  h2 {
+    font-size: 42px;
+    text-transform: none;
+    background: linear-gradient(135deg, #FFFFFF 0%, var(--premium-gold) 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  
+  h4 {
+    font-size: 20px;
+    color: var(--premium-gray);
+    font-weight: 400;
+    margin-bottom: 25px;
+  }
+  
+  .jumbotron {
+    background: radial-gradient(circle at 10% 30%, #0F172A 0%, #020617 100%);
+    color: var(--premium-white);
+    padding: 140px 25px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid var(--premium-gold);
+    margin-bottom: 0;
+  }
+  
+  .jumbotron::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212,175,55,0.08) 0%, rgba(0,0,0,0) 70%);
+    animation: rotateGlow 20s linear infinite;
+    pointer-events: none;
+  }
+  
+  @keyframes rotateGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .jumbotron h1 {
+    font-size: 64px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #FFFFFF 0%, var(--premium-gold) 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+  
+  .jumbotron h3 {
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--premium-gray);
+  }
+  
+  .container-fluid {
+    padding: 80px 50px;
+  }
+  
+  .bg-premium {
+    background: linear-gradient(135deg, #0F172A 0%, #111827 100%);
+    position: relative;
+  }
+  
+  .bg-grey {
+    background: #0A0E1A;
+    border-top: 1px solid rgba(212,175,55,0.15);
+    border-bottom: 1px solid rgba(212,175,55,0.15);
+  }
+  
+  .logo-small {
+    font-size: 60px;
+    color: var(--premium-gold);
+    transition: all 0.4s ease;
+    display: inline-block;
+    filter: drop-shadow(0 0 8px var(--premium-glow));
+  }
+  
+  .logo-small:hover {
+    transform: translateY(-8px) scale(1.05);
+    color: var(--premium-gold-light);
+  }
+  
+  .logo {
+    font-size: 200px;
+    color: var(--premium-gold);
+    filter: drop-shadow(0 0 15px rgba(212,175,55,0.4));
+  }
+  
+  .thumbnail {
+    padding: 0;
+    border: none;
+    border-radius: 24px;
+    transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    overflow: hidden;
+    background: #111827;
+    box-shadow: 0 25px 40px -15px rgba(0,0,0,0.5);
+    transform: translateY(0);
+  }
+  
+  .thumbnail:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 35px 50px -20px rgba(212,175,55,0.4);
+    border: 1px solid rgba(212,175,55,0.3);
+  }
+  
+  .thumbnail img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  
+  .thumbnail:hover img {
+    transform: scale(1.08);
+  }
+  
+  .thumbnail p {
+    padding: 20px 20px 10px;
+    font-weight: 700;
+    color: var(--premium-white);
+    font-size: 18px;
+  }
+  
+  .thumbnail p + p {
+    color: var(--premium-muted);
+    font-weight: 400;
+    font-size: 14px;
+    padding-top: 0;
+  }
+  
+  .carousel-control {
+    background-image: none;
+    color: var(--premium-gold);
+    width: 5%;
+    opacity: 0.8;
+  }
+  
+  .carousel-indicators li {
+    border-color: var(--premium-gold);
+  }
+  
+  .carousel-indicators li.active {
+    background-color: var(--premium-gold);
+  }
+  
+  .item h4 {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 500;
+    font-style: normal;
+    margin: 60px 0;
+    color: var(--premium-gray);
+  }
+  
+  .item span {
+    font-style: normal;
+    color: var(--premium-gold);
+    font-weight: 700;
+    font-size: 18px;
+  }
+  
+  .panel {
+    border: none;
+    border-radius: 32px !important;
+    transition: all 0.4s;
+    background: #0F172A;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 35px -15px rgba(0,0,0,0.6);
+    overflow: hidden;
+  }
+  
+  .panel:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 50px -20px var(--premium-glow);
+    border: 1px solid rgba(212,175,55,0.3);
+  }
+  
+  .panel-heading {
+    background: linear-gradient(135deg, #1A2333 0%, #0F172A 100%) !important;
+    padding: 32px;
+    border-bottom: 2px solid var(--premium-gold);
+  }
+  
+  .panel-heading h1 {
+    font-size: 36px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff, var(--premium-gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .panel-body {
+    padding: 30px;
+  }
+  
+  .panel-body p {
+    font-size: 16px;
+    padding: 8px 0;
+    color: #D1D5DB;
+  }
+  
+  .panel-footer {
+    background-color: #0A0E1A !important;
+    border-top: 1px solid rgba(212,175,55,0.2);
+    border-radius: 0 0 32px 32px !important;
+    padding: 30px;
+  }
+  
+  .panel-footer h3 {
+    font-size: 42px;
+    color: var(--premium-gold);
+    font-weight: 800;
+    margin-bottom: 5px;
+  }
+  
+  .panel-footer h4 {
+    color: var(--premium-muted);
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .panel-footer .btn {
+    margin: 15px 0 5px;
+    background: linear-gradient(135deg, var(--premium-gold) 0%, var(--premium-gold-dark) 100%);
+    color: #0A0E1A;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 60px;
+    font-weight: 800;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(212,175,55,0.3);
+  }
+  
+  .panel-footer .btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(212,175,55,0.5);
+    background: linear-gradient(135deg, #E5C158 0%, #D4AF37 100%);
+  }
+  
+  .navbar {
+    margin-bottom: 0;
+    background: rgba(10, 14, 26, 0.95);
+    backdrop-filter: blur(12px);
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    letter-spacing: 2px;
+    border-radius: 0;
+    font-family: 'Montserrat', sans-serif;
+    padding: 12px 0;
+    transition: all 0.3s;
+    border-bottom: 1px solid rgba(212,175,55,0.3);
+  }
+  
+  .navbar li a, .navbar .navbar-brand {
+    color: #FFFFFF !important;
+    transition: all 0.3s;
+    font-weight: 600;
+  }
+  
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: var(--premium-gold) !important;
+    background-color: transparent !important;
+    text-shadow: 0 0 5px rgba(212,175,55,0.5);
+  }
+  
+  .navbar-brand {
+    font-weight: 800;
+    font-size: 22px !important;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #FFF, var(--premium-gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+  }
+  
+  footer {
+    background: #05070F;
+    color: #9CA3AF;
+    padding: 50px 0;
+    border-top: 1px solid rgba(212,175,55,0.2);
+  }
+  
+  footer .bi {
+    font-size: 24px;
+    margin: 0 12px;
+    color: var(--premium-gold);
+    transition: all 0.3s;
+  }
+  
+  footer .bi:hover {
+    transform: translateY(-4px);
+    color: var(--premium-gold-light);
+    filter: drop-shadow(0 0 6px gold);
+  }
+  
+  .slideanim { visibility: hidden; }
+  .slide {
+    animation-name: slideUp;
+    animation-duration: 0.8s;
+    visibility: visible;
+  }
+  @keyframes slideUp {
+    0% { opacity: 0; transform: translateY(50px); } 
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  .form-control {
+    border-radius: 50px;
+    padding: 14px 22px;
+    border: 1px solid #2D3748;
+    background: #111827;
+    color: white;
+    transition: all 0.3s;
+  }
+  
+  .form-control:focus {
+    border-color: var(--premium-gold);
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
+    background: #0F172A;
+    color: white;
+  }
+  
+  .btn-default {
+    border-radius: 50px;
+    padding: 12px 32px;
+    background: linear-gradient(135deg, var(--premium-gold), var(--premium-gold-dark));
+    color: #0A0E1A;
+    font-weight: 800;
+    border: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-default:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212,175,55,0.4);
+    background: linear-gradient(135deg, #E5C158, #D4AF37);
+  }
+  
+  .contact-form .btn {
+    border-radius: 60px;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--premium-gold), var(--premium-gold-dark));
+    color: #0A0E1A;
+    font-weight: 800;
+    width: auto;
+    font-size: 16px;
+  }
+  
+  .social-links a {
+    color: var(--premium-gold);
+    margin: 0 15px;
+    font-size: 28px;
+    transition: all 0.3s;
+  }
+  
+  .social-links a:hover {
+    transform: translateY(-5px);
+    color: var(--premium-gold-light);
+  }
+  
+  .btn-danger {
+    background: linear-gradient(135deg, var(--premium-gold), var(--premium-gold-dark));
+    border: none;
+    color: #0A0E1A;
+    font-weight: bold;
+  }
+  
+  .btn-danger:hover {
+    background: var(--premium-gold-light);
+  }
+  
+  #about .btn-lg {
+    margin-top: 20px;
+  }
+  
+  .glyphicon-stats, .glyphicon-globe {
+    filter: drop-shadow(0 0 15px rgba(212,175,55,0.5));
+  }
+  
+  @media screen and (max-width: 768px) {
+    .container-fluid { padding: 50px 25px; }
+    .jumbotron h1 { font-size: 42px; }
+    h2 { font-size: 32px; }
+    .panel-footer h3 { font-size: 32px; }
+  }
+  
+  .premium-badge {
+    background: rgba(212,175,55,0.15);
+    backdrop-filter: blur(5px);
+    border-radius: 100px;
+    padding: 8px 18px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--premium-gold);
+    letter-spacing: 1px;
+  }
+  
+  .btn-outline-premium {
+    border: 2px solid var(--premium-gold);
+    background: transparent;
+    color: var(--premium-gold);
+  }
+  
+  .btn-outline-premium:hover {
+    background: var(--premium-gold);
+    color: #0A0E1A;
+  }
+  
+  .input-group .form-control {
+    border-radius: 60px 0 0 60px;
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage"><strong>NEXUS</strong>CORE</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#portfolio">PORTFOLIO</a></li>
+        <li><a href="#pricing">PRICING</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <div class="premium-badge" style="margin-bottom: 20px;">✦ ELITE DIGITAL PARTNER ✦</div>
+  <h1>NexusCore Digital</h1> 
+  <h3>Redefining digital excellence with premium craftsmanship</h3>
+  <form action="https://formspree.io/f/mldrjygp" method="POST" style="max-width: 550px; margin: 40px auto 0;">
+    <div class="input-group">
+      <input type="email" name="email" class="form-control" placeholder="Enter your email for exclusive insights" required style="border-radius: 60px 0 0 60px;">
+      <div class="input-group-btn">
+        <button class="btn btn-danger" type="submit" style="border-radius: 0 60px 60px 0; padding: 12px 28px; font-weight: 700;">Subscribe</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div id="about" class="container-fluid bg-premium">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>About NexusCore Digital</h2><br>
+      <h4>We engineer iconic digital experiences that command attention and deliver extraordinary ROI.</h4><br>
+      <p>Since 2018, NexusCore Digital has been the preferred agency for forward-thinking brands. Our 50+ elite strategists, creatives, and engineers combine visionary design with cutting-edge technology. We don't just build websites — we craft digital ecosystems that scale, perform, and captivate. Every project is an opportunity to push boundaries and set new standards in the premium digital space.</p>
+      <br><a href="#contact" class="btn btn-default btn-lg">⟡ Start Your Project ⟡</a>
+    </div>
+    <div class="col-sm-4 text-center">
+      <span class="glyphicon glyphicon-stats logo"></span>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4 text-center">
+      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Our Core Values</h2><br>
+      <h4><strong>MISSION:</strong> To elevate brands through uncompromising digital artistry and technical precision.</h4><br>
+      <p><strong>VISION:</strong> To be the global benchmark for premium digital agencies, where innovation meets timeless elegance.</p>
+      <p style="margin-top: 25px;"><span class="premium-badge">✦ INTEGRITY</span> <span class="premium-badge">✦ INNOVATION</span> <span class="premium-badge">✦ COLLABORATION</span> <span class="premium-badge">✦ EXCELLENCE</span></p>
+    </div>
+  </div>
+</div>
+
+<div id="services" class="container-fluid text-center">
+  <h2>Premium Services</h2>
+  <h4>Tailored solutions for the discerning enterprise</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <i class="glyphicon glyphicon-off logo-small"></i>
+      <h4>Elite Web Development</h4>
+      <p>High-performance platforms, headless CMS, and scalable enterprise architectures.</p>
+    </div>
+    <div class="col-sm-4">
+      <i class="glyphicon glyphicon-heart logo-small"></i>
+      <h4>Luxury UI/UX Design</h4>
+      <p>Immersive, award-winning interfaces with micro-interactions and accessibility-first approach.</p>
+    </div>
+    <div class="col-sm-4">
+      <i class="glyphicon glyphicon-stats logo-small"></i>
+      <h4>SEO & Growth Marketing</h4>
+      <p>AI-driven SEO, predictive analytics, and conversion strategies that dominate markets.</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <i class="glyphicon glyphicon-phone logo-small"></i>
+      <h4>Premium Mobile Apps</h4>
+      <p>Native & cross-platform apps with stunning animations and flawless performance.</p>
+    </div>
+    <div class="col-sm-4">
+      <i class="glyphicon glyphicon-briefcase logo-small"></i>
+      <h4>Strategic Consulting</h4>
+      <p>Digital transformation, tech audits, and C-suite advisory for competitive edge.</p>
+    </div>
+    <div class="col-sm-4">
+      <i class="glyphicon glyphicon-headphones logo-small"></i>
+      <h4>Concierge Support</h4>
+      <p>24/7 white-glove support, real-time monitoring, and proactive security.</p>
+    </div>
+  </div>
+</div>
+
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <h2>Curated Portfolio</h2><br>
+  <h4>Projects that define excellence</h4>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop" alt="Luxury Dashboard">
+        <p><strong>LUMINA Wealth</strong></p>
+        <p>Interactive wealth management platform with predictive AI & real-time analytics</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&h=300&fit=crop" alt="Fashion Ecommerce">
+        <p><strong>MAISON Atelier</strong></p>
+        <p>High-end e-commerce experience with 3D product configurator & 210% revenue boost</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=300&fit=crop" alt="Health App">
+        <p><strong>VITALIS Health</strong></p>
+        <p>Cross-platform wellness app with 100k+ active users & Apple Design Award finalist</p>
+      </div>
+    </div>
+  </div><br>
+  
+  <h2>Client Testimonials</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel" style="max-width: 850px; margin: auto;">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="item active">
+        <h4>"NexusCore Digital didn't just build our platform — they redefined our digital identity. The ROI has been staggering. A true premium partner."<br><span>— Isabella Rossi, CMO of LUMINA</span></h4>
+      </div>
+      <div class="item">
+        <h4>"The level of craft and strategic foresight is unmatched. They treat every pixel with intention. Our conversion rates soared by 198%."<br><span>— Jonathan Hayes, CEO of MAISON</span></h4>
+      </div>
+      <div class="item">
+        <h4>"From concept to launch, their team delivered perfection. The app is elegant, fast, and users are obsessed. Best agency decision ever."<br><span>— Dr. Priya Kapoor, Founder VITALIS</span></h4>
+      </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+</div>
+
+<div id="pricing" class="container-fluid">
+  <div class="text-center">
+    <h2>Investment Plans</h2>
+    <h4>Choose excellence, scale with confidence</h4>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Essential</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>1</strong> Premium Website</p>
+          <p><strong>8</strong> Custom Pages</p>
+          <p><strong>Advanced</strong> SEO Foundation</p>
+          <p><strong>Responsive</strong> + Speed Optimized</p>
+          <p><strong>3</strong> Months Priority Support</p>
+        </div>
+        <div class="panel-footer">
+          <h3>$1,499</h3>
+          <h4>one-time investment</h4>
+          <button class="btn btn-lg" onclick="alert('Thank you for choosing Essential. Our concierge team will contact you within 2 hours.')">Begin Journey</button>
+        </div>
+      </div>      
+    </div>     
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Executive</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>3</strong> Digital Properties</p>
+          <p><strong>Unlimited</strong> CMS Pages</p>
+          <p><strong>Elite SEO</strong> Suite + Analytics</p>
+          <p><strong>Full E‑commerce</strong> Integration</p>
+          <p><strong>12</strong> Months Dedicated Support</p>
+        </div>
+        <div class="panel-footer">
+          <h3>$3,999</h3>
+          <h4>one-time setup</h4>
+          <button class="btn btn-lg" onclick="alert('Executive plan selected! We will assign a senior strategist to your project.')">Claim Offer</button>
+        </div>
+      </div>      
+    </div>       
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Pinnacle</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>Unlimited</strong> Assets & Scalability</p>
+          <p><strong>Custom AI</strong> & Automation</p>
+          <p><strong>Global CDN</strong> + Security Suite</p>
+          <p><strong>Dedicated</strong> Account Director</p>
+          <p><strong>24/7</strong> VIP Concierge Support</p>
+        </div>
+        <div class="panel-footer">
+          <h3>$8,999+</h3>
+          <h4>tailored quote</h4>
+          <button class="btn btn-lg" onclick="alert('Contact our executive team directly: vip@nexuscore.com or +1 (888) 456-7890')">Talk to Specialist</button>
+        </div>
+      </div>      
+    </div>    
+  </div>
+</div>
+
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">Contact With Us</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p><strong>Build your online presence with us.</strong></p>
+<p><i class="glyphicon glyphicon-map-marker"></i> Your City, India</p>
+<p><i class="glyphicon glyphicon-phone"></i> +91 8343950589</p>
+<p><i class="glyphicon glyphicon-envelope"></i> satyajit8343@gmail.com</p>
+      <div class="social-links">
+        <a href="https://facebook.com" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://twitter.com" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://linkdIn.com" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://behance.com" aria-label="Behance"><i class="bi bi-behance"></i></a>
+      </div>
+      <p style="margin-top: 25px;"><i class="bi bi-clock"></i> Mon-Fri: 9am - 7pm EST | VIP by appointment</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <form action="https://formspree.io/f/mldrjygp" method="POST" class="contact-form">
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="name" name="name" placeholder="Full Name *" type="text" required>
+          </div>
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="email" name="email" placeholder="Email Address *" type="email" required>
+          </div>
+        </div>
+        <textarea class="form-control" id="message" name="message" placeholder="Tell us about your vision..." rows="5" required></textarea>
+        <br>
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <button class="btn btn-lg" type="submit">Send Inquiry ⟶</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <a href="#myPage" title="To Top">
+          <span class="glyphicon glyphicon-chevron-up" style="font-size: 28px; color: #D4AF37; margin-bottom: 15px; display: inline-block;"></span>
+        </a>
+        <p style="margin: 10px 0; color: #9CA3AF;">© 2025 NexusCore Digital — The Art of Digital Prestige</p>
+        <p style="font-size: 13px;">📍 India | China | Japan | Singapore</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+$(document).ready(function(){
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({ scrollTop: $(hash).offset().top }, 850, function(){ window.location.hash = hash; });
+    }
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+      var winTop = $(window).scrollTop();
+      if (pos < winTop + 600) $(this).addClass("slide");
+    });
+    var scrollPos = $(window).scrollTop() + 90;
+    $('section, div[id]').each(function() {
+      var currId = $(this).attr('id');
+      if(currId) {
+        var currOffset = $(this).offset().top;
+        if (scrollPos >= currOffset) {
+          $('.navbar-nav li').removeClass('active');
+          $('.navbar-nav a[href="#' + currId + '"]').parent().addClass('active');
+        }
+      }
+    });
+  });
+  $(window).trigger('scroll');
+});
+</script>
+</body>
+</html>
